@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="es-MX">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>Préstamos Rápidos MX</title>
+  <style>
+    :root {
+      --bg-color: #f0f2f5;
+      --card-bg: #ffffff;
+      --primary: #007bff;
+      --green: #28a745;
+      --red: #dc3545;
+      --text: #333333;
+      --text-sec: #666666;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background-color: var(--bg-color);
+      color: var(--text);
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .canvas-container {
+      max-width: 480px; /* Ширина мобильного экрана */
+      margin: 0 auto;
+      background: #fff;
+      min-height: 100vh;
+      box-shadow: 0 0 20px rgba(0,0,0,0.1);
+    }
+
+    .header {
+      background: var(--primary);
+      color: white;
+      padding: 20px 15px;
+      text-align: center;
+      border-bottom-left-radius: 20px;
+      border-bottom-right-radius: 20px;
+      margin-bottom: 20px;
+    }
+
+    .header h1 {
+      margin: 0;
+      font-size: 24px;
+      font-weight: 800;
+    }
+
+    .header p {
+      margin: 5px 0 0;
+      font-size: 14px;
+      opacity: 0.9;
+    }
+
+    .offers-list {
+      padding: 0 15px 30px 15px;
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    /* Карточка оффера */
+    .offer-card {
+      background: var(--card-bg);
+      border: 1px solid #eee;
+      border-radius: 12px;
+      padding: 15px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+      position: relative;
+    }
+
+    /* Бейджи (Recommended и т.д.) */
+    .badge {
+      position: absolute;
+      top: -10px;
+      right: 15px;
+      background: var(--red);
+      color: white;
+      font-size: 10px;
+      font-weight: 700;
+      padding: 5px 10px;
+      border-radius: 20px;
+      text-transform: uppercase;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    }
+    
+    .badge.green { background: var(--green); }
+    .badge.blue { background: var(--primary); }
+
+    .card-title {
+      display: flex;
+      align-items: center;
+      margin-bottom: 10px;
+    }
+
+    .card-title h3 {
+      margin: 0;
+      font-size: 20px;
+      font-weight: 800;
+      color: var(--text);
+    }
+
+    .card-details {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 8px;
+      font-size: 13px;
+      border-bottom: 1px dashed #eee;
+      padding-bottom: 5px;
+    }
+
+    .card-details span.label { color: var(--text-sec); }
+    .card-details span.val { font-weight: 700; color: var(--text); }
+
+    .cta-btn {
+      display: block;
+      width: 100%;
+      background: var(--primary);
+      color: white;
+      text-align: center;
+      padding: 12px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 16px;
+      margin-top: 10px;
+      transition: opacity 0.2s;
+    }
+
+    .cta-btn:active { opacity: 0.8; transform: scale(0.98); }
+
+    /* Цвета кнопок под разные офферы для теста */
+    .btn-green { background: var(--green); }
+    .btn-red { background: var(--red); }
+  </style>
+</head>
+<body>
+
+<div class="canvas-container">
+  
+  <header class="header">
+    <h1>🇲🇽 Préstamos MX</h1>
+    <p>Aprobación rápida en 15 minutos</p>
+  </header>
+
+  <div class="offers-list">
+
+    <div class="offer-card" style="border: 2px solid #28a745;">
+      <span class="badge">Recomendado</span>
+      <div class="card-title"><h3>Slana.mx</h3></div>
+      <div class="card-details"><span class="label">Monto:</span><span class="val">Hasta $20,000</span></div>
+      <div class="card-details"><span class="label">Aprobación:</span><span class="val">Inmediata</span></div>
+      <a href="https://link.lead-cash.com/click?pid=1141&offer_id=633" class="cta-btn btn-green">Solicitar Ahora</a>
+    </div>
+
+    <div class="offer-card">
+      <div class="card-title"><h3>Abea.mx</h3></div>
+      <div class="card-details"><span class="label">Monto:</span><span class="val">$500 - $24,000</span></div>
+      <div class="card-details"><span class="label">Plazo:</span><span class="val">Hasta 180 días</span></div>
+      <a href="https://link.lead-cash.com/click?pid=1141&offer_id=725" class="cta-btn">Solicitar</a>
+    </div>
+
+    <div class="offer-card">
+      <span class="badge green">0% Interés</span>
+      <div class="card-title"><h3>MoneyCat</h3></div>
+      <div class="card-details"><span class="label">Primer préstamo:</span><span class="val">Gratis</span></div>
+      <div class="card-details"><span class="label">Tiempo:</span><span class="val">17 min</span></div>
+      <a href="https://link.lead-cash.com/click?pid=1141&offer_id=543" class="cta-btn btn-green">Quiero Gratis</a>
+    </div>
+
+    <div class="offer-card">
+      <span class="badge blue">Tarjeta</span>
+      <div class="card-title"><h3>BanCoppel</h3></div>
+      <div class="card-details"><span class="label">Producto:</span><span class="val">Tarjeta Crédito</span></div>
+      <div class="card-details"><span class="label">Requisito:</span><span class="val">INE Vigente</span></div>
+      <a href="https://link.lead-cash.com/click?pid=1141&offer_id=585" class="cta-btn">Solicitar Tarjeta</a>
+    </div>
+
+    <div class="offer-card">
+      <div class="card-title"><h3>Vivus MX</h3></div>
+      <div class="card-details"><span class="label">Monto:</span><span class="val">$1,000 - $8,000</span></div>
+      <div class="card-details"><span class="label">Edad:</span><span class="val">18+ años</span></div>
+      <a href="https://link.lead-cash.com/click?pid=1141&offer_id=630" class="cta-btn">Solicitar</a>
+    </div>
+
+    <div class="offer-card">
+      <div class="card-title"><h3>TurboPeso</h3></div>
+      <div class="card-details"><span class="label">Max:</span><span class="val">$30,000</span></div>
+      <div class="card-details"><span class="label">Geo:</span><span class="val">Todo México</span></div>
+      <a href="https://link.lead-cash.com/click?pid=1141&offer_id=671" class="cta-btn">Solicitar</a>
+    </div>
+
+    <div class="offer-card">
+      <div class="card-title"><h3>AvaFin</h3></div>
+      <div class="card-details"><span class="label">Nuevos:</span><span class="val">$8,000</span></div>
+      <div class="card-details"><span class="label">Recurrentes:</span><span class="val">$35,000</span></div>
+      <a href="https://link.lead-cash.com/click?pid=1141&offer_id=556" class="cta-btn">Solicitar</a>
+    </div>
+
+    <div class="offer-card">
+      <div class="card-title"><h3>Dineria</h3></div>
+      <div class="card-details"><span class="label">Pago:</span><span class="val">Quincenal</span></div>
+      <div class="card-details"><span class="label">Max:</span><span class="val">$35,000</span></div>
+      <a href="https://go.lead-cash.com/click?pid=1141&offer_id=365" class="cta-btn">Solicitar</a>
+    </div>
+
+    <div class="offer-card">
+      <div class="card-title"><h3>Prestomin</h3></div>
+      <div class="card-details"><span class="label">Requisito:</span><span class="val">CLABE</span></div>
+      <div class="card-details"><span class="label">Proceso:</span><span class="val">Digital</span></div>
+      <a href="https://link.lead-cash.com/click?pid=1141&offer_id=642" class="cta-btn">Solicitar</a>
+    </div>
+
+    <div class="offer-card">
+      <div class="card-title"><h3>Lanu.mx</h3></div>
+      <div class="card-details"><span class="label">Monto:</span><span class="val">Hasta $10,000</span></div>
+      <div class="card-details"><span class="label">Doc:</span><span class="val">INE / Pasaporte</span></div>
+      <a href="https://link.lead-cash.com/click?pid=1141&offer_id=666" class="cta-btn">Solicitar</a>
+    </div>
+
+    <div class="offer-card">
+      <div class="card-title"><h3>RayoCredit</h3></div>
+      <div class="card-details"><span class="label">Edad:</span><span class="val">21+ años</span></div>
+      <div class="card-details"><span class="label">Req:</span><span class="val">WhatsApp</span></div>
+      <a href="https://link.lead-cash.com/click?pid=1141&offer_id=613" class="cta-btn">Solicitar</a>
+    </div>
+
+    <div class="offer-card">
+      <div class="card-title"><h3>Clicredito</h3></div>
+      <div class="card-details"><span class="label">Tasa:</span><span class="val">Desde 1.1%</span></div>
+      <div class="card-details"><span class="label">Resp:</span><span class="val">Minutos</span></div>
+      <a href="https://link.lead-cash.com/click?pid=1141&offer_id=600" class="cta-btn">Solicitar</a>
+    </div>
+
+    <div class="offer-card">
+      <div class="card-title"><h3>Credito-365</h3></div>
+      <div class="card-details"><span class="label">Monto:</span><span class="val">$100 - $20,000</span></div>
+      <div class="card-details"><span class="label">Extra:</span><span class="val">Prórroga</span></div>
+      <a href="https://link.lead-cash.com/click?pid=1141&offer_id=487" class="cta-btn">Solicitar</a>
+    </div>
+
+    <div class="offer-card">
+      <div class="card-title"><h3>CashSpace</h3></div>
+      <div class="card-details"><span class="label">Servicio:</span><span class="val">24/7</span></div>
+      <div class="card-details"><span class="label">Comisión:</span><span class="val">0%</span></div>
+      <a href="https://link.lead-cash.com/click?pid=1141&offer_id=500" class="cta-btn">Solicitar</a>
+    </div>
+
+    <div class="offer-card">
+      <div class="card-title"><h3>Finmercado</h3></div>
+      <div class="card-details"><span class="label">Ingreso min:</span><span class="val">$1,500</span></div>
+      <div class="card-details"><span class="label">Edad:</span><span class="val">22 - 55</span></div>
+      <a href="https://link.lead-cash.com/click?pid=1141&offer_id=449" class="cta-btn">Solicitar</a>
+    </div>
+
+    <div class="offer-card">
+      <div class="card-title"><h3>LetoCredit</h3></div>
+      <div class="card-details"><span class="label">Aprobación:</span><span class="val">Alta</span></div>
+      <div class="card-details"><span class="label">Velocidad:</span><span class="val">Express</span></div>
+      <a href="https://link.lead-cash.com/click?pid=1141&offer_id=718" class="cta-btn">Solicitar</a>
+    </div>
+
+    <div class="offer-card">
+      <div class="card-title"><h3>ProntoFondeo</h3></div>
+      <div class="card-details"><span class="label">Fondeo:</span><span class="val">Inmediato</span></div>
+      <div class="card-details"><span class="label">Tipo:</span><span class="val">Personal</span></div>
+      <a href="https://link.lead-cash.com/click?pid=1141&offer_id=697" class="cta-btn">Solicitar</a>
+    </div>
+
+  </div>
+</div>
+
+</body>
+</html>
